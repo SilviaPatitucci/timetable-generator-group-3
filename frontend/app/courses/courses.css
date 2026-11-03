@@ -1,0 +1,36 @@
+/* Courses-page presentation only; no global CRUD styles are overridden. */
+.courses-page { padding-bottom: 3rem; }
+.courses-page-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+.courses-page-header h1 { margin: 0 0 .3rem; font-size: clamp(1.9rem, 3vw, 2.5rem); font-weight: 700; color: #17313d; }
+.courses-page-header p { margin: 0; color: #68808b; }
+.courses-page-header .btn { padding: .65rem 1rem; font-weight: 650; }
+.courses-page .filters, .courses-page .course-form, .courses-page .course-list { margin-bottom: 1.3rem; padding: 1.3rem; border: 1px solid #e1e9ea; border-radius: 16px; background: #fff; box-shadow: 0 10px 25px rgba(16,47,59,.07); }
+.courses-page section h2 { margin: 0 0 1rem; font-size: 1.3rem; font-weight: 700; color: #1b3945; }
+.courses-page .filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .9rem 1rem; }
+.courses-page .filters h2 { width: 100%; margin-bottom: 0; }
+.courses-page .filters label { display: flex; flex: 1 1 190px; flex-direction: column; gap: .4rem; color: #536c75; font-size: .85rem; font-weight: 600; }
+.courses-page select, .courses-page input:not([type="checkbox"]) { width: 100%; min-height: 42px; padding: .55rem .7rem; border: 1px solid #d7e3e4; border-radius: 9px; background: #fff; color: #203946; }
+.courses-page select:focus, .courses-page input:focus { outline: 3px solid rgba(23,107,104,.18); outline-offset: 1px; border-color: #176b68; }
+.courses-page select:disabled { background: #f3f6f6; color: #91a1a6; }
+.courses-page .course-form form { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+.courses-page .course-form form > label { display: flex; flex-direction: column; gap: .4rem; color: #536c75; font-size: .85rem; font-weight: 600; }
+.courses-page fieldset { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; padding: .9rem 1rem; border: 1px solid #dce7e7; border-radius: 10px; }
+.courses-page legend { float: none; width: auto; margin: 0 .25rem; padding: 0 .25rem; font-size: .85rem; font-weight: 700; }
+.courses-page fieldset label { display: inline-flex; align-items: center; gap: .5rem; }
+.courses-page input[type="checkbox"] { accent-color: #176b68; }
+.courses-page .form-actions { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: .6rem; }
+.courses-page .form-actions button, .courses-page .courses-table button { padding: .38rem .7rem; border: 1px solid #d5e5e3; border-radius: 9px; background: #edf5f4; color: #195b59; font-size: .82rem; font-weight: 650; }
+.courses-page .form-actions button[type="submit"] { background: #176b68; border-color: #176b68; color: #fff; }
+.courses-page .form-actions button:hover, .courses-page .courses-table button:hover { filter: brightness(.95); }
+.courses-page .table-container { max-width: 100%; overflow-x: auto; }
+.courses-page .courses-table { width: 100%; min-width: 890px; border-collapse: collapse; font-size: .88rem; }
+.courses-page .courses-table th { padding: .85rem .75rem; background: #f3f7f7; color: #5e737b; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; white-space: normal; }
+.courses-page .courses-table td { padding: .85rem .75rem; vertical-align: middle; color: #293f49; }
+.courses-page .courses-table th, .courses-page .courses-table td { border-bottom: 1px solid #e7eeee; text-align: left; }
+.courses-page .courses-table tbody tr:hover { background: #f8fbfa; }
+.courses-page .courses-table td:first-child { font-weight: 650; }
+.courses-page .courses-table td:last-child { white-space: nowrap; }
+.courses-page .courses-table td:last-child button + button { margin-left: .35rem; background: #fff3f4; border-color: #f2d2d5; color: #b43b45; }
+.courses-page .courses-notification { margin-bottom: 1rem; padding: .85rem 1rem; border-radius: 10px; border: 1px solid #f0c9cd; background: #fff0f1; color: #963440; }
+.courses-page .courses-notification.success { border-color: #b9ded1; background: #e6f5ee; color: #205e4b; }
+@media (max-width: 767px) { .courses-page .course-form form { grid-template-columns: 1fr; } .courses-page .filters label { flex-basis: 100%; } }
