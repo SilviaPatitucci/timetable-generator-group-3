@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { AppNav } from "../components/app-shell";
+import "./courses.css";
 
 const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
@@ -306,14 +308,16 @@ const result = await request(`/courses${query}`);
   }
 
   return (
-    <main>
-      <header>
+    <div className="campus-app">
+      <AppNav current="/courses" />
+      <main className="container courses-page py-4">
+      <header className="courses-page-header">
         <div>
           <h1>Manage Courses</h1>
           <p>Create, edit, filter and delete courses.</p>
         </div>
 
-        <button type="button" onClick={openCreateForm}>
+        <button type="button" className="btn btn-campus" onClick={openCreateForm}>
           Add course
         </button>
       </header>
@@ -321,7 +325,7 @@ const result = await request(`/courses${query}`);
       {notification && (
         <div
           role="alert"
-          className={`notification ${notification.type}`}
+          className={`courses-notification ${notification.type}`}
         >
           {notification.text}
         </div>
@@ -531,7 +535,7 @@ const result = await request(`/courses${query}`);
           <p>No courses found.</p>
         ) : (
           <div className="table-container">
-            <table>
+            <table className="courses-table">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -593,6 +597,7 @@ const result = await request(`/courses${query}`);
           </div>
         )}
       </section>
-    </main>
+      </main>
+    </div>
   );
 }
