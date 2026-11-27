@@ -103,6 +103,10 @@ def make_token():
 def auth_client(client, session, make_token):
     """auth_client("director") -> a TestClient logged in as a new user with that role."""
 
+    @pytest.fixture()
+def director_client(auth_client):
+    return auth_client("director")
+
     def _auth_client(role):
         user = AppUser(id=uuid.uuid4(), role=role)
         session.add(user)
